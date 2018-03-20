@@ -12,7 +12,7 @@ xhprof (or tideways) visualize html tool from [xhprof repo](https://github.com/p
 
 ## Tideways example
 
-1. Install (tideways extension)[https://github.com/tideways/php-xhprof-extension]
+1. Install [tideways extension](https://github.com/tideways/php-xhprof-extension)
 2. Write code and save profiler result.
 
 ```
