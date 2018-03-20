@@ -746,6 +746,7 @@ function xhprof_get_param_helper($param) {
   else if (isset($_POST[$param])) {
     $val = $_POST[$param];
   }
+
   return $val;
 }
 

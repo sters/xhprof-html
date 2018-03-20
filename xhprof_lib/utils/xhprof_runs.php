@@ -76,7 +76,7 @@ class XHProfRuns_Default implements iXHProfRuns {
 
   private function file_name($run_id, $type) {
 
-    $file = "$run_id.$type." . $this->suffix;
+    $file = "$run_id." . $this->suffix;
 
     if (!empty($this->dir)) {
       $file = $this->dir . "/" . $file;
@@ -145,16 +145,21 @@ class XHProfRuns_Default implements iXHProfRuns {
     return $run_id;
   }
 
-  function list_runs() {
+  function list_runs($url_params) {
     if (is_dir($this->dir)) {
         echo "<hr/>Existing runs:\n<ul>\n";
         $files = glob("{$this->dir}/*.{$this->suffix}");
         usort($files, create_function('$a,$b', 'return filemtime($b) - filemtime($a);'));
         foreach ($files as $file) {
             list($run,$source) = explode('.', basename($file));
+
+            $base_url_params = xhprof_array_unset(xhprof_array_unset($url_params, 'run'), 'source');
+            $base_url_params['run'] = $run;
+            $base_url_params['source'] = $source;
+            $base_url_params = '?' . http_build_query($base_url_params);
+
             echo '<li><a href="' . htmlentities($_SERVER['SCRIPT_NAME'])
-                . '?run=' . htmlentities($run) . '&source='
-                . htmlentities($source) . '">'
+                . $base_url_params . '">'
                 . htmlentities(basename($file)) . "</a><small> "
                 . date("Y-m-d H:i:s", filemtime($file)) . "</small></li>\n";
         }

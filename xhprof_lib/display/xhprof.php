@@ -1381,7 +1381,6 @@ function profiler_diff_report($url_params,
  */
 function displayXHProfReport($xhprof_runs_impl, $url_params, $source,
                              $run, $wts, $symbol, $sort, $run1, $run2) {
-
   if ($run) {                              // specific run to display?
 
     // run may be a single run or a comma separate list of runs
@@ -1406,7 +1405,6 @@ function displayXHProfReport($xhprof_runs_impl, $url_params, $source,
       $xhprof_data = $data['raw'];
       $description = $data['description'];
     }
-
 
     profiler_single_run_report($url_params,
                                $xhprof_data,
@@ -1433,7 +1431,7 @@ function displayXHProfReport($xhprof_runs_impl, $url_params, $source,
   } else {
     echo "No XHProf runs specified in the URL.";
     if (method_exists($xhprof_runs_impl, 'list_runs')) {
-      $xhprof_runs_impl->list_runs();
+      $xhprof_runs_impl->list_runs($url_params);
     }
   }
 }

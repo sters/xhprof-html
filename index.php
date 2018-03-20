@@ -33,7 +33,7 @@
 
 // by default assume that xhprof_html & xhprof_lib directories
 // are at the same level.
-$GLOBALS['XHPROF_LIB_ROOT'] = dirname(__FILE__) . '/../xhprof_lib';
+$GLOBALS['XHPROF_LIB_ROOT'] = dirname(__FILE__) . '/xhprof_lib';
 
 require_once $GLOBALS['XHPROF_LIB_ROOT'].'/display/xhprof.php';
 
@@ -46,6 +46,7 @@ $params = array('run'        => array(XHPROF_STRING_PARAM, ''),
                 'run2'       => array(XHPROF_STRING_PARAM, ''),
                 'source'     => array(XHPROF_STRING_PARAM, 'xhprof'),
                 'all'        => array(XHPROF_UINT_PARAM, 0),
+                'dir'        => array(XHPROF_STRING_PARAM, __DIR__),
                 );
 
 // pull values of these params, and create named globals for each param
@@ -80,7 +81,7 @@ $vbbar = ' class="vbbar"';
 $vrbar = ' class="vrbar"';
 $vgbar = ' class="vgbar"';
 
-$xhprof_runs_impl = new XHProfRuns_Default();
+$xhprof_runs_impl = new XHProfRuns_Default($dir);
 
 displayXHProfReport($xhprof_runs_impl, $params, $source, $run, $wts,
                     $symbol, $sort, $run1, $run2);
