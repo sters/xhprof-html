@@ -24,7 +24,9 @@ my_application();
 
 $data = tideways_xhprof_disable();
 
-file_put_contents("/tmp/1.xhprof", serialize($data));
+$filename = '/tmp/' . intval(microtime(true)) . mt_rand(1,10000) . '.xhprof';
+file_put_contents($filename, serialize($data));
+echo 'Profile Result: ' . $filename;
 ```
 
 3. Start this web app at PHP build-in server.
