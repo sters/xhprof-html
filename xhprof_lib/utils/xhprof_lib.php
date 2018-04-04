@@ -586,8 +586,9 @@ function xhprof_compute_inclusive_times($raw_data) {
        * Recursion is handled in the XHProf PHP extension by giving nested
        * calls a unique recursion-depth appended name (for example, foo@1).
        */
-      xhprof_error("Error in Raw Data: parent & child are both: $parent");
-      return;
+      // NOTE: do not return, cant show detail profiling.
+      // xhprof_error("Error in Raw Data: parent & child are both: $parent");
+      // return;
     }
 
     if (!isset($symbol_tab[$child])) {
