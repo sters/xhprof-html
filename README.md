@@ -24,7 +24,7 @@ my_application();
 
 $data = tideways_xhprof_disable();
 
-file_put_contents("/tmp/profile.xhprof", serialize($data));
+file_put_contents("/tmp/1.xhprof", serialize($data));
 ```
 
 3. Start this web app at PHP build-in server.
