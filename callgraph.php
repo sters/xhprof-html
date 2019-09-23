@@ -62,7 +62,10 @@ $params = array(// run id param
                 'run1' => array(XHPROF_STRING_PARAM, ''),
 
                 // second run in diff mode.
-                'run2' => array(XHPROF_STRING_PARAM, '')
+                'run2' => array(XHPROF_STRING_PARAM, ''),
+
+                // directory
+                'dir' => array(XHPROF_STRING_PARAM, __DIR__)
                 );
 
 // pull values of these params, and create named globals for each param
@@ -78,7 +81,7 @@ if (!array_key_exists($type, $xhprof_legal_image_types)) {
   $type = $params['type'][1]; // default image type.
 }
 
-$xhprof_runs_impl = new XHProfRuns_Default();
+$xhprof_runs_impl = new XHProfRuns_Default($dir);
 
 if (!empty($run)) {
   // single run call graph image generation
