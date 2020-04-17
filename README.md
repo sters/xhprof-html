@@ -1,13 +1,14 @@
 # xhprof-html
 
-xhprof (or tideways) visualize html tool from [xhprof repo](https://github.com/phacility/xhprof).
+xhprof (or tideways) visualize html tool.
+This repository some modified for especially solo usage from [xhprof repository](https://github.com/phacility/xhprof). 
 
 
 ## Usage
 
 1. clone repo
-2. ```$ php -S localhost:8000```
-3. Access http://localhost:8000/?dir={Your xhprof profiling result dir}
+2. `php -S localhost:8000`
+3. Access `http://localhost:8000/?dir={Your xhprof profiling result dir}`
 
 
 ## Tideways example
@@ -35,6 +36,6 @@ echo 'Profile Result: ' . $filename;
 $ php -S localhost:8000
 ```
 
-4. Access http://localhost:8000/?dir=/tmp
+4. Access `http://localhost:8000/?dir=/tmp`
 
 5. Enjoy profiling!
