@@ -41,6 +41,6 @@ $ php -S localhost:8000
 5. Enjoy profiling!
 
 
-## Other xhprof tools
+## Other xhprof visualization tools
 
-You can find another visualization tool on [GitHub Topics](https://github.com/topics/xhprof?o=desc&s=stars)!
+You can find other visualization tools on [GitHub Topics](https://github.com/topics/xhprof?o=desc&s=stars)!
