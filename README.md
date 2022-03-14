@@ -39,3 +39,8 @@ $ php -S localhost:8000
 4. Access `http://localhost:8000/?dir=/tmp`
 
 5. Enjoy profiling!
+
+
+## Other xhprof tools
+
+You can find another visualization tool on [GitHub Topics](https://github.com/topics/xhprof?o=desc&s=stars)!
